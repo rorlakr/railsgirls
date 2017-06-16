@@ -4,68 +4,69 @@ title: You better check you app, before you wreck your app
 permalink: testing-rspec
 ---
 
-# Test your app with RSpec
+# Rspec으로 앱 테스트하기
 
 *Created by Clemens Helm, [@clemenshelm](https://twitter.com/clemenshelm) and Floor Drees, [@floordrees](https://twitter.com/floordrees)* 
 
-RSpec is a Ruby testing framework, that describes our application's behavior in a syntax that doesn't look much like Ruby. It outputs test results in your terminal, so you'll test your reading skills as well (pun intended).
+*번역 [@corazzon](https://GitHub.com/corazzon)*
 
-__COACH__: Talk about testing and Behavior-Driven Development.
+Rspec은 루비 테스팅 프레임워크입니다. 문장으로 어플리케이션 명세에 대한 행동(behavior)을 적으며, 루비답지 않습니다. 터미널에 테스트 결과가 표시되기 때문에 읽기 능력을 테스트할 수 있습니다(농담입니다).
 
-### Install rspec
+__COACH__: 테스팅과 BDD(Behavior-Driven Development)에 대해 얘기해 보세요.
 
-For starters, let's install RSpec and all of its dependencies. 
+### rspec 설치
+
+처음 시작하는 분들을 위해 RSpec과 의존성있는 gem 들을 설치 합니다.
 {% highlight sh %}
 gem install rspec
 {% endhighlight %}
 
-Then we call
+그리고 나서 다음의 명령어로 초기화 해줍니다.
 {% highlight sh %}
 rspec --init
 {% endhighlight %}
 
-in our project directory. This creates `spec_helper.rb` in the spec folder, and `.rspec`.
+프로젝트 폴더의 spec폴더에 `spec_helper.rb`을 만들어 주세요. 그리고 `.rspec`도 만들어 주세요.
 
-Rubyists often use the words 'test' and 'specification' interchangeably, that's why you'll store your tests in the 'specs' folder. Save your test as `idea_spec.rb` (`<name_of_spec>_spec.rb`).
+루비스트는 종종 '테스트'와 '명세'를 바꿔 말하기도 하는데 그 이유는 테스트를 'spec'폴더에 저장하기 때문에이에요. 다음과 같이 테스트 파일을 만들어 보세요. `idea_spec.rb` (`<name_of_spec>_spec.rb`).
 
-Inside that new file, write:
+새로 만든 파일 안에는 다음과 같이 작성해 보세요:
   
 {% highlight ruby %}
 require "spec_helper"
 require "idea"
 {% endhighlight %}
 
-Next, let's describe one of our specifications
+그리고 명세 중 하나를 설명합니다.
 {% highlight ruby %}
 describe Idea do
-  it "has a title" # your examples (tests) go here
+  it "has a title" # 예제 테스트를 여기에 적어보세요.
 end
 {% endhighlight %}
 
-In your terminal run
+터미널에서 다음과 같이 실행해 보세요.
 {% highlight sh %}
 rspec spec/lib/idea_spec.rb
 {% endhighlight %}
 
-which will output that your test is pending as it's not yet implemented. 
+아직 구현되지 않았기 때문에 테스트가 보류 중인 것을 출력합니다.
 
-__COACH__: Talk about googling terminal output.
+__COACH__: 터미널에 출력된 것을 어떻게 구글링해볼지 얘기해 보세요.
 
-Let's do something about that!
+그럼 다음과 같이 작성해봐요!
 {% highlight ruby %}
 describe Idea do
-  it "has a title" do # yep, you can totally use 'it'
-    idea = Idea.new # creating a new idea 'instance'
-    idea.title.should be_true # this is our expectation
+  it "제목을 적으세요. 한글로 적어도 됩니다." do # 네, 대체적으로 'it'을 사용합니다.
+    idea = Idea.new # Idea에 대한 새로운 '인스턴스'를 생성합니다.
+    idea.title.should be_true # 예상되는 결과를 적습니다.
   end
 end
 {% endhighlight %}
 
-should give you a more satisfying output.
+좀 더 만족스러운 결과를 볼 수 있을 거예요.
 
-####Refactoring
-
-You could actually also write:  
+#### 리팩토링
+아래처럼 작성할 수도 있습니다:
 
 {% highlight ruby %}
 describe Idea do
@@ -73,46 +74,46 @@ describe Idea do
 end
 {% endhighlight %}
 
-which looks a lot nicer, but there's a lot of magic involved. For now it's probably jyst nice to know that we can 'refactor' those big chuncks of code into smaller bits with a little more experience.  
+이렇게 작성하는 것이 좀 더 나아 보입니다. 하지만 마법처럼 엮여있는 거 같아 이해하기 어려워요. 지금 당장은 괜찮아 보일지 몰라도, 좀 더 경험이 쌓이면 큰 덩어리를 조금 더 작게 '리팩토링'할 수 있습니다.
 
-__COACH__: Talk a bit about refactoring.  
+__COACH__: 리팩토링에 대해 얘기해봐요.
 
-#### Marking to-do's with tests
+#### To-do 목록으로 테스트 할 항목을 표시 해 놓기
 
-Yeah! To-do lists. Awesome. A nifty RSpec feature is the functionality to mark certain tests as pending. 
+To-do 목록은 놀랍습니다. RSpec의 멋진 기능은 특정 테스트를 보류 중으로 표시하는 것입니다. 앞으로 작성이 필요한 테스트 항목에 대해 적습니다.
 
-Leaving out the `do` and the `end` in the example body, like so
+예제의 몸체에서 `do`와 `end` 를 제거합니다. 이렇게요.
 
 {% highlight ruby %}
 it "has a title"
 {% endhighlight %}
 
-will mark a test as pending. For bigger applications, where you want to tackle one test at a time, you can also add an `x` in front of an example, making it read 
+테스트가 보류 중으로 표시됩니다. 한 번에 하나의 테스트를 처리하려는 더 큰 어플리케이션의 경우, 예제 앞에 `x`를 추가하여 읽을 수 있게 합니다. 
 {% highlight ruby %}
 describe Idea do  
   xit "has a title" do
 end
 {% endhighlight %}
 
-or use the word `pending` in your example.
+여러분의 예제에 '보류 중'인 단어를 사용해 보세요.
 
 ### Behavior-Driven Development
 
-Normally we would go about BDD testing in a slightly different way. Thinking about the application we want to build, we'll write down our expectations and then start building step by step, with the specifications in mind. 
+일반적으로 BDD 테스트는 약간 다른 방식으로 진행됩니다. 우리가 만들고자 하는 애플리케이션에 대해 생각하면서, 예상되는 결과를 작성한 후, 마음속에 있는 명세를 단계별로 단계적으로 구축합니다.
 
-We'd first write 
+처음으로 작성할 것은
 
 {% highlight ruby %}
 describe Idea do
   it "has a title"
     idea = Idea.new 
     idea.title.should be_true 
-    # or, alternatively: idea.title.should == true
+    # 혹은, 대안으로: idea.title.should == true
   end
 end
 {% endhighlight %}
 
-and only then create a file named `idea.rb` introducing the idea class
+그리고 아이디어 클래스를 소개하는`idea.rb`라는 파일을 만드세요.
 
 {% highlight ruby %}
 class Idea
@@ -120,9 +121,9 @@ attr_accessor  :title
 end
 {% endhighlight %}
 
-as running `rspec spec/lib/idea_spec.rb` in your terminal before you've implemented that class will throw you an error. Luckely, errors are nothing to be afraid of. RSpec errors actually help you write (the necessary) code! 
+클래스를 구현하기 전에 터미널에서 `rspec spec/lib/idea_spec.rb`을 실행하면 에러가 발생합니다. 다행히 오류는 두려워할 필요가 없습니다. RSpec 오류는 실제로 필요한 코드를 작성하는 데 도움이 됩니다!
 
-Try and write tests for the follow up guides to check if you're implementing ALL the right things. 
+가이드를 따라 테스트를 작성하고 테스트하여 제대로 구현하였는지 확인해 보세요.
 
 {% highlight ruby %}
 describe Attendee do
@@ -130,6 +131,6 @@ describe Attendee do
 end
 {% endhighlight %}
 
-Just saying.
+그럼,
 
-Happy testing!
+즐거운 테스팅 되세요!
