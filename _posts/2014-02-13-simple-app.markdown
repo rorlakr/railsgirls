@@ -45,7 +45,7 @@ permalink: simpleapp
 
 먼저, 터미널을 열겠습니다:
 
-* 맥: 스포트라이트를 열어 *Terminal* 를 키보드로 입력하고 *Terminal* 애플리케이션이 나타나면 선택합니다.
+* 맥 OS X: 스포트라이트를 열어 *Terminal* 를 키보드로 입력하고 *Terminal* 애플리케이션이 나타나면 선택합니다.
 * 윈도우즈: 시작버튼을 눌러 *Command Prompt* 찾아서 *Command Prompt with Ruby on Rails*를 클릭합니다.
 * 리눅스 (우분투/페도라): 대시에서 *Terminal*를 찾아서 *Terminal*를 클릭합니다.
 
@@ -162,7 +162,7 @@ $
 
 명령행 프롬프트가 보이지 않아서 다른 명령어를 실행할 수 없습니다. `cd` 명령어를 실행해봐도 꿈쩍하지 않습니다. 정상으로 돌아가려면 다음과 같이 합니다:
 
-터미널에서 `CTRL-C` 를 치고 서버를 종료합니다.
+터미널에서 <kbd>Ctrl</kbd>+<kbd>C</kbd> 를 치고 서버를 종료합니다.
 
 **Coach:** 명령어를 하나씩 설명하세요. 실행결과 무엇을 만들었나요? 서버가 무엇을 하나요? 특별한 템플릿 몇가지는  [GitHub](https://github.com/Ben-M/simple_scaffold)에서 참고하세요.
 
@@ -206,7 +206,7 @@ ruby bin\rails server
 
 브라우저 주소창에  [http://localhost:3000/ideas](http://localhost:3000/ideas) 입력합니다. 화면에 보이는 아무 링크나 클릭해보고 실행결과를 봅니다.
 
-`CTRL-C` 쳐서 서버를 종료합니다.
+<kbd>Ctrl</kbd>+<kbd>C</kbd> 쳐서 서버를 종료합니다.
 
 
 ## *3.*Design
@@ -322,7 +322,7 @@ rails generate uploader Picture
 
 **레일스 서버를 재시작**합니다.
 
-터미널에서 `CTRL-C` 쳐서 서버를 종료합니다. 종료하면 윗방향 화살표를 누르면 최근에 실행한 명령어가 나타납니다. 최근 명령어로 서버를 재시작할 수 있습니다.
+터미널에서 <kbd>Ctrl</kbd>+<kbd>C</kbd> 쳐서 서버를 종료합니다. 종료하면 윗방향 화살표를 누르면 최근에 실행한 명령어가 나타납니다. 최근 명령어로 서버를 재시작할 수 있습니다.
 
 재시작해야 앞서 추가한 라이브러리를 사용할 수 있습니다.
 
@@ -427,12 +427,12 @@ get "pages/info"
 
 ## Additional Guides
 
-* Guide 0: [루비, 레일스, 콘솔에 대한 치트시트](https://github.com/PragTob/rails-beginner-cheatsheet)
-* Guide 1: [댓글 달기 Janika Liiv](../commenting)
-* Guide 2: [헤로쿠로 배포하기 Terence Lee](../heroku) / [오픈시프트로 배포하기 Katie Miller](../openshift)
+* Guide 0: [루비, 레일스, 콘솔에 대한 치트시트](http://www.pragtob.info/rails-beginner-cheatsheet/)
+* Guide 1: [댓글 달기 Janika Liiv](/commenting)
+* Guide 2: [헤로쿠로 배포하기 Terence Lee](/heroku) / [오픈시프트로 배포하기 Katie Miller](/openshift)
 * Guide 3: [Build a map of workshop participants by Rails Girls Berlin](http://railsgirlsberlin.de/apptutorial/)
-* Guide 4: [썸네일 이미지 만들기 Miha Filej](../thumbnails)
-* Guide 5: [HTML과 CSS 디자인 Alex Liao](../design)
-* Guide 6: [디바이즈 젬을 사용하여 인증(사용자 계정)하기 Piotr Steininger](../devise/)
+* Guide 4: [썸네일 이미지 만들기 Miha Filej](/thumbnails)
+* Guide 5: [HTML과 CSS 디자인 Alex Liao](/design)
+* Guide 6: [디바이즈 젬을 사용하여 인증(사용자 계정)하기 Piotr Steininger](/devise/)
 * Guide 7: [위에서 만든 레일스 걸스 애플리케이션을 단계별로 설명 Lucy Bain](https://github.com/lbain/railsgirls)
 

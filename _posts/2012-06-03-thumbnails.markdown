@@ -12,10 +12,12 @@ __Coach__: 4단계에서 HTML의 이미지 가로 크기를 정하는 것을 설
 
 ## *1.*Installing ImageMagick
 
-* 맥: `brew install imagemagick` 실행합니다. 브류 명령을 실행하지 못하면 [홈브류를 여기서][in-homebrew] 설치할 수 있습니다.
+* 맥 OS X: `brew install imagemagick` 실행합니다. 브류 명령을 실행하지 못하면 [홈브류를 여기서][in-homebrew] 설치할 수 있습니다.
 * 윈도우즈: [이미지매직 인스톨러][im-win]를 내려받아서 실행합니다(use the first
-  *download* link).
-* 리눅스: 우분투 또는 데비안에서 `sudo apt-get install imagemagick`를 실행합니다. 다른 배포판에서는 `apt-get` 대신에 다른 패키지 매니저를 사용합니다.
+  *download* link). 설치 마법사에서, 기존 바이너리 실행 파일을 설치하는
+  체크박스를 꼭 선택합니다.
+* 리눅스: 우분투 또는 데비안에서 `sudo apt-get install imagemagick`를 실행합니다. 
+  다른 배포판에서는 `apt-get` 대신에 다른 패키지 매니저를 사용합니다.
 
   [im-win]: http://www.imagemagick.org/script/binary-releases.php?ImageMagick=vkv0r0at8sjl5qo91788rtuvs3#windows
   [in-homebrew]: http://mxcl.github.io/homebrew/
@@ -69,13 +71,13 @@ end
 `app/views/ideas/index.html.erb`파일을 수정합니다. 
 
 {% highlight erb %}
-<td><%= idea.picture %></td>
+<%= image_tag idea.picture_url, width: '100%' if idea.picture.present? %>
 {% endhighlight %}
 
 를 아래와 같이 수정합니다.
 
 {% highlight erb %}
-<td><%= image_tag idea.picture_url(:thumb) if idea.picture? %></td>
+<%= image_tag idea.picture_url(:thumb) if idea.picture.present? %>
 {% endhighlight %}
 
 아이디어 전체 목록에서 썸네일 이미지가 보이는지 

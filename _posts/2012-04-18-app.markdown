@@ -37,7 +37,7 @@ permalink: app
 
 ### Important
 
-여러분이 사용하는 컴퓨터의 운영체제에 따라 안내사항을 선택하도록 합니다. - 윈도우즈 커뮤터에서 실행하는 명령어는 맥과 리눅스와 다릅니다. 따라하면서 실행할 명령어 테두리 아래에서 운영체제를 윈도우즈와 기타 중에서 선택할 수 있습니다. 클라우드 서비스(예. 니트로스)를 사용하는 경우, 윈도우즈 컴퓨터를 사용하는 사람도 리눅스 명령어를 실행해야합니다.
+여러분이 사용하는 컴퓨터의 운영체제에 따라 안내사항을 선택하도록 합니다. - 윈도우즈 커뮤터에서 실행하는 명령어는 맥과 리눅스와 다릅니다. 따라하면서 실행할 명령어 테두리 아래에서 운영체제를 윈도우즈와 기타 중에서 선택할 수 있습니다. 클라우드 서비스(예. Codenvy)를 사용하는 경우, 윈도우즈 컴퓨터를 사용하는 사람도 리눅스 명령어를 실행해야합니다.
 
 ## *1.*Creating the application
 
@@ -45,10 +45,10 @@ permalink: app
 
 먼저, 터미널을 열겠습니다:
 
-* 맥: 스포트라이트를 열어 *Terminal* 를 키보드로 입력하고 *Terminal* 애플리케이션이 나타나면 선택합니다.
+* 맥 OS X: 스포트라이트를 열어 *Terminal* 를 키보드로 입력하고 *Terminal* 애플리케이션이 나타나면 선택합니다.
 * 윈도우즈: 시작버튼을 눌러 *Command Prompt* 찾아서 *Command Prompt with Ruby on Rails*를 클릭합니다.
 * 리눅스 (우분투/페도라): 대시에서 *Terminal*를 찾아서 *Terminal*를 클릭합니다.
-* 클라우드 서비스 (예. 니트로스): 여러분의 계정으로 로그인합니다. 박스를 실행하여 IDE로 이동합니다([설치 가이드](/install#using-a-cloud-service) 참고). 터미널은 대체로 브라우저 아랫 영역에 있습니다.
+* 클라우드 서비스 (예. Codenvy): 여러분의 계정으로 로그인합니다. 프로젝트를 실행하고 IDE로 이동합니다([설치 가이드](/install#using-a-cloud-service) 참고). 터미널은 대체로 브라우저 아랫 영역에 있습니다.
 
 다음, 터미널에서 아래와 같이 명령어를 키보드로 입력합니다:
 
@@ -130,9 +130,9 @@ rails server
   </div>
 </div>
 
-브라우저 주소창에 <http://localhost:3000> 입력합니다. 클라우드 서비스(예. 니트로스)를 사용한다면 미리보기 기능을 사용합니다([설치 가이드](/install#using-a-cloud-service) 참고).
+브라우저 주소창에 <http://localhost:3000> 입력합니다. 클라우드 서비스(예. Codenvy)를 사용한다면 미리보기 기능을 사용합니다([설치 가이드](/install#using-a-cloud-service) 참고).
 
-"Welcome aboard" 페이지가 나타납니다. 새로운 앱을 오류없이 만들었습니다.
+"Yay! You’re on Rails!" 페이지가 나타납니다. 새로운 앱을 오류없이 만들었습니다.
 
 레일스 서버를 실행하였기 때문에 터미널에서 깜빡이는 프롬프트가 사라졌습니다. 아래와 같이 보입니다:
 
@@ -151,7 +151,7 @@ $
 
 명령행 프롬프트가 보이지 않아서 다른 명령어를 실행할 수 없습니다. `cd` 명령어를 실행해봐도 꿈쩍하지 않습니다. 정상으로 돌아가려면 다음과 같이 합니다:
 
-터미널에서 `CTRL-C` 를 치고 서버를 종료합니다.
+터미널에서 <kbd>Ctrl</kbd>+<kbd>C</kbd> 를 치고 서버를 종료합니다.
 
 **Coach:** 명령어를 하나씩 설명하세요. 실행결과 무엇을 만들었나요? 서버가 무엇을 하나요?
 
@@ -168,27 +168,14 @@ rails generate scaffold idea name:string description:text picture:string
 
 스캐폴드는 프로젝트 디렉토리에서 파일을 새로 만듭니다. 하지만 제대로 동작하려면 명령어를 몇개를 실행하여 데이터베이스를 업데이트하고 서버를 재시작해야합니다.
 
-<div class="os-specific">
-  <div class="nix">
 {% highlight sh %}
-bin/rake db:migrate
+rails db:migrate
 rails server
 {% endhighlight %}
-  </div>
 
-  <div class="win">
-{% highlight sh %}
-ruby bin/rake db:migrate
-rails server
-{% endhighlight %}
-  </div>
-</div>
-
-브라우저 주소창에 <http://localhost:3000/ideas> 입력합니다. 클라우드 서비스(예. 니트로스) 사용자는 미리 보기 주소에 '/ideas' 를 붙입니다. ([설치 가이드](/install#using-a-cloud-service) 참고).
+브라우저 주소창에 <http://localhost:3000/ideas> 입력합니다. 클라우드 서비스(예. Codenvy) 사용자는 미리 보기 주소에 '/ideas' 를 붙입니다. ([설치 가이드](/install#using-a-cloud-service) 참고).
 
 화면에 보이는 아무 링크나 클릭해보고 실행결과를 봅니다.
-
-`CTRL-C` 쳐서 서버를 종료합니다.
 
 
 ## *3.*Design
@@ -200,14 +187,14 @@ rails server
 텍스트 에디터로 `app/views/layouts/application.html.erb` 파일을 편집합니다.
 
 {% highlight erb %}
-<%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 {% endhighlight %}
 
 줄 위에 
 
 {% highlight erb %}
-<link rel="stylesheet" href="//railsgirls.com/assets/bootstrap.css">
-<link rel="stylesheet" href="//railsgirls.com/assets/bootstrap-theme.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.css">
 {% endhighlight %}
 
 를 넣고 아래와 같은 줄을 
@@ -252,10 +239,10 @@ rails server
 {% highlight html %}
 <footer>
   <div class="container">
-    Rails Girls 2015
+    Rails Girls 2017
   </div>
 </footer>
-<script src="//railsgirls.com/assets/bootstrap.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.js"></script>
 {% endhighlight %}
 
 넣습니다. 그럼 아이디어 테이블도 꾸미겠습니다. `app/assets/stylesheets/application.css` 파일을 아래와 같이 수정합니다.
@@ -292,7 +279,7 @@ gem 'carrierwave'
 
 **Coach:** 라이브러리가 무엇이고 왜 유용한지 설명하세요. 오픈 소스 소프트웨어를 설명하세요.
 
-터미널에서 `CTRL-C` 치고 서버를 종료합니다.
+터미널에서 <kbd>Ctrl</kbd>+<kbd>C</kbd> 치고 서버를 종료합니다.
 
 터미널에서 아래와 같이 실행합니다:
 
@@ -312,10 +299,15 @@ Note: 터미널을 하나 더 띄워서 레일스 서버를 종료하지 않고 
 그렇더라도 **레일스 서버를 재시작**합니다.
 재시작해야 앞서 추가한 업로드 라이브러리를 사용할 수 있습니다.
 
+업로더를 찾지 못하는 에러가 나타면 아래와 같이 추가합니다:
+{% highlight ruby %}
+gem 'net-ssh'
+{% endhighlight %}
+
 `app/models/idea.rb` 파일을 수정합니다. 
 
 {% highlight ruby %}
-class Idea < ActiveRecord::Base
+class Idea < ApplicationRecord
 {% endhighlight %}
 
 줄 아래에
@@ -327,27 +319,13 @@ mount_uploader :picture, PictureUploader
 와 같이 추가합니다. `app/views/ideas/_form.html.erb` 파일을 수정합니다. 
 
 {% highlight erb %}
-<%= f.text_field :picture %>
+<%= form.text_field :picture, id: :idea_picture %>
 {% endhighlight %}
 
 를 아래와 같이 
 
 {% highlight erb %}
-<%= f.file_field :picture %>
-{% endhighlight %}
-
-바꿉니다. 어쩌면, *TypeError: can't cast ActionDispatch::Http::UploadedFile to string* 에러가 발생할 수 있습니다.
-
-이런 경우, `app/views/ideas/_form.html.erb` 파일을 수정합니다.
-
-{% highlight erb %}
-<%= form_for(@idea) do |f| %>
-{% endhighlight %}
-
-를 아래와 같이 
-
-{% highlight erb %}
-<%= form_for @idea, :html => {:multipart => true} do |f| %>
+<%= form.file_field :picture, id: :idea_picture %>
 {% endhighlight %}
 
 바꿉니다. 브라우저에서 아이디어에 사진을 넣을 수 있습니다. 사진 파일을 업로드해보면 사진이 안보이고 파일 위치만 보입니다. 사진이 보이도록 수정하겠습니다.
@@ -361,7 +339,7 @@ mount_uploader :picture, PictureUploader
 를 아래와 같이 
 
 {% highlight erb %}
-<%= image_tag(@idea.picture_url, :width => 600) if @idea.picture.present? %>
+<%= image_tag(@idea.picture_url, width: 600) if @idea.picture.present? %>
 {% endhighlight %}
 
 바꿉니다. 브라우저의 새로고침 버튼을 눌르면 사진이 보입니다.
@@ -371,19 +349,18 @@ mount_uploader :picture, PictureUploader
 
 ## *5.*Finetune the routes
 
-브라우저에서 <http://localhost:3000> (클라우드 서비스를 사용하면 미리보기 주소)로 이동합니다. 첫 페이지가 "Welcome aboard"가 보이는데 첫 페이지를 아이디어 페이지가 보이도록 바꾸겠습니다. 
+브라우저에서 <http://localhost:3000> (클라우드 서비스를 사용하면 미리보기 주소)로 이동합니다. 첫 페이지가 "Yay! You’re on Rails!"가 보이는데 첫 페이지를 아이디어 페이지가 보이도록 바꾸겠습니다. 
 
 `config/routes.rb` 파일을 수정합니다. 첫번째 줄에 아래와 같이 추가합니다.
 
 {% highlight ruby %}
-root :to => redirect('/ideas')
+root to: redirect('/ideas')
 {% endhighlight %}
 
 브라우저에서 루트 패스(<http://localhost:3000/> 또는 미리보기 주소)를 열어서 수정한 내용을 확인합니다.
 
 **Coach:** 라우트를 설명합니다. 스태틱 파일의 관계와 라우트 순서를 포함하여 설명합니다.
 
-**Rails 3 users:** `/public/` 디렉토리의 index.html 파일을 삭제해야 합니다.
 
 ## Create static page in your app
 
@@ -414,12 +391,13 @@ get "pages/info"
 ## Additional Guides
 
 * Guide 0: [루비, 레일스, 콘솔에 대한 치트시트](https://github.com/PragTob/rails-beginner-cheatsheet)
-* Guide 1: [댓글 달기 Janika Liiv](../commenting)
-* Guide 2: [헤로쿠로 배포하기 Terence Lee](../heroku) / [오픈시프트로 배포하기 Katie Miller](../openshift) / [셀리 클라우드로 배포하기](../shellycloud) / [애니나인즈로 배포하기](../anynines) / [트럭커로 배포하기](../trucker)
-* Guide 3: [썸네일 이미지 만들기 Miha Filej](../thumbnails)
-* Guide 4: [HTML과 CSS 디자인 Alex Liao](../design)
-* Guide 5: [디바이즈 젬을 사용하여 인증(사용자 계정)하기 Piotr Steininger](../devise/)
-* Guide 6: [그라바타로 사용자 프로필 사진 넣기](../gravatar)
-* Guide 7: [RSpec으로 애플리케이션 테스트](../testing-rspec)
-* Guide 8: [트라비스-CI로 개발, 빌드, 배포하기](../continuous-travis) / [코드쉽으로 개발, 빌드, 배포하기](../continuous)
+* Guide 1: [댓글 달기 Janika Liiv](/commenting)
+* Guide 2: [헤로쿠로 배포하기 Terence Lee](/heroku) / [오픈시프트로 배포하기 Katie Miller](../openshift) / [셀리 클라우드로 배포하기](../shellycloud) / [애니나인즈로 배포하기](../anynines) / [트럭커로 배포하기](../trucker)
+* Guide 3: [썸네일 이미지 만들기 Miha Filej](/thumbnails)
+* Guide 4: [HTML과 CSS 디자인 Alex Liao](/design)
+* Guide 5: [디바이즈 젬을 사용하여 인증(사용자 계정)하기 Piotr Steininger](/devise/)
+* Guide 6: [그라바타로 사용자 프로필 사진 넣기](/gravatar)
+* Guide 7: [RSpec으로 애플리케이션 테스트](/testing-rspec)
+* Guide 8: [트라비스-CI로 개발, 빌드, 배포하기](/continuous-travis) / [코드쉽으로 개발, 빌드, 배포하기](/continuous)
 * Guide 9: [위에서 만든 레일스 걸스 애플리케이션을 단계별로 설명 Lucy Bain](https://github.com/lbain/railsgirls)
+* Guide 10: [백엔드에 액티브 어드민 기능 만들기](/backend-with-active-admin)

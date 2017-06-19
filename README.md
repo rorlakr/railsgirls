@@ -13,7 +13,7 @@ http://guides.railsgirls.com 을 열거나 소스 저장소를 클론하고 [지
 ### 지킬 jekyll 설치
 
 ```
-$ cd railsgirls.github.com
+$ cd railsgirls.github.io
 ```
 
 ```
@@ -29,12 +29,22 @@ $ bundle install
 {% endhighlight %}
 ```
 
-코드 블럭을 직접 수정하지 않는 경우 설치하지 않아도 됩니다. 설치하려면  "파이그먼츠 Pygments" 섹션에서 [설치 방법](https://github.com/mojombo/jekyll/wiki/Install)을 읽을세요.
+코드 블럭을 직접 수정하지 않는 경우 설치하지 않아도 됩니다. 설치하려면  "파이그먼츠 Pygments" 섹션에서 [설치 방법](http://jekyllrb.com/docs/installation/)을 읽을세요.
 
 ### 지킬 jekyll 실행
 
 ```
-$ jekyll server --watch
+$ bundle exec jekyll server --watch
+```
+
+### Styling
+
+Wrap keyboard shortcuts with [kbd](https://www.w3.org/wiki/HTML/Elements/kbd) HTML tag.
+
+To make posts consistent in style use `Ctrl+C` over `CTRL-c`/`ctrl+c`
+
+```
+To shut down the server you can hit <kbd>Ctrl</kbd>+<kbd>C</kbd>
 ```
 
 ### 문제가 생겼나요?

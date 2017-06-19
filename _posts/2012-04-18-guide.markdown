@@ -17,6 +17,7 @@ permalink: guide
 
 미래의 행사 계획은 [www.railsgirls.com](http://railsgirls.com)에서 볼 수 있습니다.
 
+You are also welcome to join our [organizers' Slack discussion forum](https://rails-girls-slack.herokuapp.com/).
 
 ### 필수사항
 레일스 걸스 행사는 비영리입니다. 참가비를 받지도 않고 도우미와 발표자에게 대가를 드리지도 않습니다. 참가자는 프로그래밍에 대한 사전 지식이 없어도 되며 나이 제한도 두지 않습니다. 참가자에게 필요한 것은 노트북과 약간의 호기심이 전부입니다.

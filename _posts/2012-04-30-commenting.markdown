@@ -57,20 +57,15 @@ app/views/ideas/show.html.erb 파일을 수정합니다.
 <% @comments.each do |comment| %>
   <div>
     <strong><%= comment.user_name %></strong>
-    <br />
+    <br>
     <p><%= comment.body %></p>
     <p><%= link_to 'Delete', comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' } %></p>
   </div>
 <% end %>
-<%= render 'comments/form' %>
+<%= render partial: 'comments/form', locals: { comment: @comment } %>
 {% endhighlight %}
 
 `app/controllers/ideas_controller.rb` 파일을 수정합니다. show 액션 아래에 
-{% highlight ruby %}
-@idea = Idea.find(params[:id])
-{% endhighlight %}
-
-다음과 같이 추가합니다. 
 {% highlight ruby %}
 @comments = @idea.comments.all
 @comment = @idea.comments.build
@@ -79,7 +74,7 @@ app/views/ideas/show.html.erb 파일을 수정합니다.
 `app/views/comments/_form.html.erb` 파일을 수정합니다.
 {% highlight erb %}
   <div class="field">
-    <%= f.label :body %><br />
+    <%= f.label :body %><br>
     <%= f.text_area :body %>
   </div>
 {% endhighlight %}

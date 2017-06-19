@@ -99,6 +99,7 @@ rails g devise:install
   <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
   <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
 <% end %>
+</p>
 {% endhighlight %}
 위의 코드를 아래 코드 아래에 넣습니다.
 {% highlight erb %}
