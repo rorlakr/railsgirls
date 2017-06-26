@@ -9,7 +9,7 @@ permalink: backend-with-active-admin
 *Created by [Rasmus Kjellberg](https://www.rasmuskjellberg.se)* 
 *번역 [@corazzon](https://GitHub.com/corazzon)*
 
-**이 가이드는 여러분이 이미 레일스 걸스 앱을 만들었다는 가정하에 쓰였습니다.** [**앱 개발 가이드는 여기를 참고하세요.**](../app)
+**이 가이드는 여러분이 이미 레일스 걸스 앱을 만들었다는 가정하에 쓰였습니다.** [**앱 개발 가이드는 여기를 참고하세요.**](./app)
 
 Active Admin 은 루비온레일스의 관리자페이지를 생성해주는 플러그인입니다. 일반적인 비즈니스 애플리케이션 패턴을 추상화하여 개발자가 아주 적은 노력으로 아름답고 우아한 인터페이스를 간단하게 구현할 수 있도록 합니다. Active Admin 에 대해 [여기](http://activeadmin.info/)에서 자세한 설명을 볼 수 있습니다.
 
